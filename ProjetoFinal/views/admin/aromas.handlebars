@@ -1,0 +1,24 @@
+<!-- Página Principal: Aromas  -->
+<h5> Adicionar Aroma: </h5>
+<!-- botão de cadastrar novos aromas no banco de dados-->
+<a href="/admin/aromas/add"> <button class="btn btn-secondary"> Cadastrar Aroma</button> </a>
+
+<br><br>
+<h5> Lista dos aromas cadastrados: </h5>
+<!-- listagem dos aromas cadastrados no banco de dados-->
+{{#each aromas}}
+  <br>
+    <div class="card border-dark mb-3" style="max-width: 80rem;">
+      <div class="card-header"><h9> {{nome}} </h9> 
+      </div>
+        <div class="card-body text-dark">
+          <!-- botão de alterar/editar os aromas cadastrados no banco de dados-->
+          <a href="/admin/aromas/alterar/{{_id}}"> <button class="btn btn-secondary mt-3"> Alterar </button></a>
+          <!-- botão de remover os aromas cadastrados no banco de dados-->
+          <a href="/admin/aromas/remover/{{_id}}"> <button class="btn btn-secondary mt-3"> Remover </button></a>
+        </div>
+    </div>
+{{else}}
+  <br><br>
+  <h5> "Nenhum aroma cadastrado !!"" </h45>
+{{/each}}

@@ -1,0 +1,30 @@
+<!-- Página Principal: Produtos  -->
+<h5> Adicionar Produto: </h5>
+<!-- botão de cadastrar novos produtos no banco de dados-->
+<a href="/admin/produtos/add"> <button class="btn btn-secondary"> Cadastrar Produto</button> </a>
+
+
+<br><br>
+<h5> Lista dos produtos cadastrados: </h5>
+<!-- listagem dos aromas cadastrados no banco de dados-->
+{{#each produtos}}
+  <br>
+
+      <div class="card border-dark mb-3" style="max-width: 80rem;">
+        <div class="card-header"><h4> {{nome}} </h4> 
+        </div>
+          <div class="card-body text-dark">
+            <small>Aroma: {{aroma.nome}} </small><br>
+            <small>Quantidade: {{quantidade}} </small><br>
+            <small>Data: {{datacompra}} </small> <br>
+            <!-- botão de editar/alterar os produtos cadastrados no banco de dados-->
+            <a href="/admin/produtos/alterar/{{_id}}"> <button class="btn btn-secondary mt-3"> Alterar </button></a>
+            <!-- botão de deletar/remover os produtos cadastrados no banco de dados-->
+            <a href="/admin/produtos/remover/{{_id}}"> <button class="btn btn-secondary mt-3"> Remover </button></a>
+          </div>
+      </div>
+
+{{else}}
+  <br><br>
+  <h5> "Nenhum produto cadastrado !!"" </h45>
+{{/each}}
